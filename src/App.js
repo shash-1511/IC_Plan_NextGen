@@ -1,8 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
-  return (
+  const [text, setText] = useState('');
+  const handleInputChange = (event) => {
+    setText(event.target.value);
+  };
+  return (    
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -18,6 +23,15 @@ function App() {
           Learn React
         </a>
       </header>
+      <p className='Plan_name'>Plan Name
+        <br></br>
+        <input type="text" value={Text} placeholder="Type Here ..." onChange={handleInputChange}>        
+        </input>        
+      </p>
+      <p className='Description'> Description
+        <br></br>
+        <input type='text' value={Text} placeholder='Description'></input>
+      </p>
     </div>
   );
 }
